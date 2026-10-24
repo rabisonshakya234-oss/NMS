@@ -5,7 +5,18 @@ const { notFound } = require('../utils/errorHandler');
 
 const router = express.Router();
 
-router.use(cors({ origin: config.clientUrl })); // lets your frontend call this API
+const allowedOrigins = [
+  config.clientUrl,
+  'https://nms-99e8.vercel.app',
+  'http://localhost:3000',
+];
+
+router.use(cors({
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+    cb(null, false);
+  },
+}));
 
 router.get('/health', (req, res) => res.json({ success: true, message: 'OK' }));
 
