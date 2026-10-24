@@ -12,7 +12,7 @@ const config = {
   saltRounds: Number(env.BCRYPT_SALT_ROUNDS) || 10,
   clientUrl: (env.CLIENT_URL || 'http://localhost:3000').replace(/\/+$/, ''),
   // The reset email links to <resetPageUrl>/<token>. Default: the built-in web app.
-  resetPageUrl: (env.RESET_PAGE_URL || `${(env.CLIENT_URL || 'http://localhost:3000').replace(/\/+$/, '')}/app/#/reset`).replace(/\/+$/, ''),
+  resetPageUrl: (env.RESET_PAGE_URL || `${(env.CLIENT_URL || 'https://nms-10.onrender.com').replace(/\/+$/, '')}/app/#/reset`).replace(/\/+$/, ''),
   resetTokenMinutes: Number(env.RESET_TOKEN_EXPIRES_MINUTES) || 15,
 
   // nodemailer (SMTP) settings
