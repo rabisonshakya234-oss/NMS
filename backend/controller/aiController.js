@@ -6,4 +6,4 @@ async function askNotes(req, res) {
   res.json({ success: true, message: 'Answer ready', data });
 }
 
-module.exports = { askNotes };
+module.exports = { askNotes: asyncHandler(askNotes) };

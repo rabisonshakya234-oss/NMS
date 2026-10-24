@@ -16,4 +16,8 @@ async function listUsers(req, res) {
   res.json({ success: true, message: 'Users fetched', data });
 }
 
-module.exports = { getProfile, updateProfile, listUsers };
+module.exports = {
+  getProfile: asyncHandler(getProfile),
+  updateProfile: asyncHandler(updateProfile),
+  listUsers: asyncHandler(listUsers),
+};

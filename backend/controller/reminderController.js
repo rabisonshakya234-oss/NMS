@@ -16,4 +16,8 @@ async function deleteReminder(req, res) {
   res.json({ success: true, message: 'Reminder removed' });
 }
 
-module.exports = { createReminder, listReminders, deleteReminder };
+module.exports = {
+  createReminder: asyncHandler(createReminder),
+  listReminders: asyncHandler(listReminders),
+  deleteReminder: asyncHandler(deleteReminder),
+};

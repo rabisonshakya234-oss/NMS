@@ -64,6 +64,15 @@ async function exportNotes(req, res) {
 }
 
 module.exports = {
-  createNote, listNotes, listTags, getNote, updateNote, autosaveNote, deleteNote,
-  togglePin, toggleArchive, bulkAction, exportNotes,
+  createNote: asyncHandler(createNote),
+  listNotes: asyncHandler(listNotes),
+  listTags: asyncHandler(listTags),
+  getNote: asyncHandler(getNote),
+  updateNote: asyncHandler(updateNote),
+  autosaveNote: asyncHandler(autosaveNote),
+  deleteNote: asyncHandler(deleteNote),
+  togglePin: asyncHandler(togglePin),
+  toggleArchive: asyncHandler(toggleArchive),
+  bulkAction: asyncHandler(bulkAction),
+  exportNotes: asyncHandler(exportNotes),
 };

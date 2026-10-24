@@ -32,4 +32,11 @@ async function changePassword(req, res) {
   res.json({ success: true, message: 'Password changed successfully' });
 }
 
-module.exports = { register, login, logout, forgotPassword, resetPassword, changePassword };
+module.exports = {
+  register: asyncHandler(register),
+  login: asyncHandler(login),
+  logout: asyncHandler(logout),
+  forgotPassword: asyncHandler(forgotPassword),
+  resetPassword: asyncHandler(resetPassword),
+  changePassword: asyncHandler(changePassword),
+};
