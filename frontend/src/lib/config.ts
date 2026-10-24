@@ -13,4 +13,4 @@ export const MAX_TAG_LENGTH = 30;
 export const AUTOSAVE_DELAY_MS = 2000;
 
 // The backend (Express) base URL. CORS on the backend allows only SITE_URL.
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').replace(/\/+$/, '');
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://nms-10.onrender.com/api').replace(/\/+$/, '');
